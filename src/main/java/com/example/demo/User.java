@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Version;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
@@ -26,5 +27,8 @@ public class User {
     @NotBlank(message ="Username can't be null")
     @Size(min=3, max=20, message="Username can't be less then 3 char or more then 20 char")
     private String userName;
+
+    @Version
+    private Long version = 0L;
 
 }
