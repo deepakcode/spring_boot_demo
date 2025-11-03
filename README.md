@@ -30,7 +30,7 @@ public class User {
 ```java
 package com.example.demo.repository;
 
-import com.example.demo.model.User;
+import com.example.demo.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface UserRepository extends JpaRepository<User, Long> {
@@ -111,10 +111,11 @@ public class GlobalExceptionHandler {
 ```java
 package com.example.demo.service;
 
+import com.example.demo.User;
 import com.example.demo.exception.*;
-import com.example.demo.model.User;
 import com.example.demo.repository.UserRepository;
 import org.springframework.stereotype.Service;
+
 import java.util.List;
 
 @Service
@@ -163,10 +164,11 @@ public class UserService {
 ```java
 package com.example.demo.controller;
 
-import com.example.demo.model.User;
+import com.example.demo.User;
 import com.example.demo.service.UserService;
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 
 @RestController
@@ -174,6 +176,7 @@ import java.util.List;
 public class UserController {
 
     private final UserService service;
+
     public UserController(UserService service) {
         this.service = service;
     }
