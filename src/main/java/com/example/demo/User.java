@@ -13,7 +13,7 @@ import lombok.ToString;
 @NoArgsConstructor
 public class User {
 
-    private int userId;
+    private long userId;
 
     @NotBlank(message ="Username can't be null")
     @Size(min=3, max=20, message="Username can't be less then 3 char or more then 20 char")
