@@ -13,12 +13,12 @@ public class Controller {
     @Autowired
     NetworkCallService networkCallService;
 
-    @GetMapping("/test")
+    @GetMapping("/pcalls")
     public String test() throws InterruptedException {
         return parallelCallService.parallel_calls().join();
     }
 
-    @GetMapping("/testt")
+    @GetMapping("/ncalls")
     public String testt() throws InterruptedException {
         return networkCallService.getData().getBody();
     }
