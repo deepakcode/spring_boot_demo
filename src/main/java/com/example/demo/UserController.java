@@ -16,7 +16,6 @@ public class UserController {
             throw new ResourceNotFoundException("User with id "+id+" not found");
         }
         return userService.getUser(id);
-        //return new User(id,"Deepak - Get User");
     }
 
     @RequestMapping(method=RequestMethod.POST, value ="/user")
