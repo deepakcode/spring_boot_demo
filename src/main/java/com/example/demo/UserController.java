@@ -8,7 +8,6 @@ public class UserController {
 
     @RequestMapping(method=RequestMethod.GET, value ="/user/{id}")
     public User getUser(@PathVariable("id") int id){
-
         if(id==100){
             throw new ResourceNotFoundException("User with id "+id+" not found");
         }
